@@ -4,7 +4,7 @@ Repo containing sample VS Code extensions.
 ## Run Hello World sample
 Instructions summarized from https://code.visualstudio.com/api/get-started/your-first-extension.
 
-Outside of the `helloWorld` directory, run `code ./helloWorld`, which will open a VS Code window.
+Outside of the `helloworld` directory, run `code ./helloWorld`, which will open a VS Code window.
 
 Press `F5`, which will open another new window.
 
