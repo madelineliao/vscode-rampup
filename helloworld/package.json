@@ -24,7 +24,28 @@
 				"command": "extension.currTime",
 				"title": "Current Time"
 			}
-		]
+		],
+		"viewsContainers":{
+			"activitybar": [
+				{
+					"id": "test-container",
+					"title": "Test Container",
+					"icon": ""
+				}
+			]
+		},
+		"views": {
+            "test-container": [
+                {
+                    "id": "package-dependencies",
+                    "name": "Dependencies"
+                },
+                {
+                    "id": "package-outline",
+                    "name": "Outline"
+                }
+            ]
+        }
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run compile",
