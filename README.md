@@ -25,7 +25,9 @@ In this example, I've added a new view (a view is one of the icons on the sideba
 I've added a view represented by an icon of some cherries.
 
 ## Currently exploring: Populating a view with data from a TreeDataProvider
-I'm currently working on populating the view container mentioned in the previous section. Using the Kubernetes VS Code extension (https://github.com/Azure/vscode-kubernetes-tools) as a guide, I'm exploring how to display the users' Kubernetes clusters in the view container.
+I'm currently working on populating the view container mentioned in the previous section. Using the Kubernetes VS Code extension (https://github.com/Azure/vscode-kubernetes-tools) as a guide, I'm exploring how to display the user's Kubernetes clusters in the view container.
+### Update: Tuesday 7/2/19
+Was able to get the new view to display the user's Kubernetes clusters. Bug: when switching to the Kubernetes extension view then switching back to the new view, the clusters are no longer displayed. (Might have to do with the fact that I based my code off of the Kubernetes extension code, so that overlap may be causing some problems?)
 
 # Resources
 Resources I read through and referenced.
