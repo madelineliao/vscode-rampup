@@ -29,6 +29,9 @@ I'm currently working on populating the view container mentioned in the previous
 ### Update: Tuesday 7/2/19
 Was able to get the new view to display the user's Kubernetes clusters. Bug: when switching to the Kubernetes extension view then switching back to the new view, the clusters are no longer displayed. (Might have to do with the fact that I based my code off of the Kubernetes extension code, so that overlap may be causing some problems?)
 
+### Update: Wednesday 7/3/19
+Disabling the Kubernetes extension fixes the problem described above. The two seem to interact with each other somehow; when both are enabled, duplicate "refresh" icons appear in each view. However, this does not occur when the Kubernetes extension is disabled. Currently exploring why that is.
+
 # Resources
 Resources I read through and referenced.
 
