@@ -48,7 +48,7 @@ function activate(context) {
     context.subscriptions.push(disposable1);
     context.subscriptions.push(disposable2);
     const treeProvider = explorer.create(kubectl, host_1.host);
-    vscode.window.registerTreeDataProvider('extension.vsKubernetesExplorer', treeProvider);
+    vscode.window.registerTreeDataProvider('extension.vsKubernetesTestExplorer', treeProvider);
     vscode.commands.registerCommand('extension.vsKubernetesRefreshTestExplorer', () => treeProvider.refresh());
 }
 exports.activate = activate;

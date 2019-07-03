@@ -12,7 +12,7 @@
 	"activationEvents": [
 		"onCommand:extension.helloWorld",
 		"onCommand:extension.currTime",
-		"onView:extension.vsKubernetesExplorer"
+		"onView:extension.vsKubernetesTestExplorer"
 	],
 	"main": "./out/extension.js",
 	"contributes": {
@@ -47,7 +47,7 @@
 		"views": {
             "test-container": [
                 {
-                    "id": "extension.vsKubernetesExplorer",
+                    "id": "extension.vsKubernetesTestExplorer",
                     "name": "Clusters"
                 },
                 {
@@ -64,7 +64,7 @@
             "view/title": [
                 {
                     "command": "extension.vsKubernetesRefreshTestExplorer",
-                    "when": "view == extension.vsKubernetesExplorer",
+                    "when": "view == extension.vsKubernetesTestExplorer",
                     "group": "navigation"
                 
                 }
