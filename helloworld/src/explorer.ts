@@ -211,7 +211,7 @@ class KubernetesContextNode extends KubernetesExplorerNodeImpl implements Kubern
     }
 
     get icon(): vscode.Uri {
-        return vscode.Uri.file(path.join(__dirname, "../../images/k8s-logo.png"));
+        return vscode.Uri.file(path.join(__dirname, "../images/k8s-logo.png"));
     }
 
     get clusterType(): string {

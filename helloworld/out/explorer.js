@@ -175,7 +175,7 @@ class KubernetesContextNode extends KubernetesExplorerNodeImpl {
         this.metadata = metadata;
     }
     get icon() {
-        return vscode.Uri.file(path.join(__dirname, "../../images/k8s-logo.png"));
+        return vscode.Uri.file(path.join(__dirname, "../images/k8s-logo.png"));
     }
     get clusterType() {
         return KUBERNETES_CLUSTER;

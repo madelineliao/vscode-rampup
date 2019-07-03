@@ -49,6 +49,7 @@ function activate(context) {
     context.subscriptions.push(disposable2);
     const treeProvider = explorer.create(kubectl, host_1.host);
     vscode.window.registerTreeDataProvider('extension.vsKubernetesExplorer', treeProvider);
+    vscode.commands.registerCommand('extension.vsKubernetesRefreshTestExplorer', () => treeProvider.refresh());
 }
 exports.activate = activate;
 // this method is called when your extension is deactivated

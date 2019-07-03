@@ -24,7 +24,16 @@
 			{
 				"command": "extension.currTime",
 				"title": "Current Time"
-			}
+            },
+            {
+                "command": "extension.vsKubernetesRefreshTestExplorer",
+                "title": "Refresh",
+                "category": "Kubernetes",
+                "icon": {
+                    "light": "images/light/refresh.svg",
+                    "dark": "images/dark/refresh.svg"
+                }
+            }
 		],
 		"viewsContainers":{
 			"activitybar": [
@@ -48,6 +57,16 @@
 				{
                     "id": "other",
                     "name": "Other"
+                }
+            ]
+        },
+        "menus": {
+            "view/title": [
+                {
+                    "command": "extension.vsKubernetesRefreshTestExplorer",
+                    "when": "view == extension.vsKubernetesExplorer",
+                    "group": "navigation"
+                
                 }
             ]
         }
