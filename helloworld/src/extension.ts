@@ -17,6 +17,10 @@ import { kubeChannel } from './kubeChannel';
 
 import * as helmexec from './helm.exec';
 import * as helm from './helm';
+import { print } from 'util';
+import { doesNotReject } from 'assert';
+
+let {PythonShell} = require('python-shell')
 
 const minikube = minikubeCreate(host, fs, shell, installDependencies);
 const draft = draftCreate(host, fs, shell, installDependencies);
@@ -29,7 +33,18 @@ export function activate(context: vscode.ExtensionContext) {
 
 	// Use the console to output diagnostic information (console.log) and errors (console.error)
 	// This line of code will only be executed once when your extension is activated
-		console.log('Congratulations, your extension "helloworld" is now active!');
+        console.log('Congratulations, your extension "helloworld" is now active!');
+
+        let options = {
+            mode: 'binary',
+            pythonPath: 'python3',
+            scriptPath: '/home/t-maliao/vscode-rampup/helloworld/src'
+          };
+        let pyshell = new PythonShell('sample.py', options);
+
+        pyshell.stdout.on('data', function (data) {
+            console.log(data.toString());
+        });
 
 	// The command has been defined in the package.json file
 	// Now provide the implementation of the command with registerCommand
@@ -53,8 +68,9 @@ export function activate(context: vscode.ExtensionContext) {
 
 	const treeProvider = explorer.create(kubectl, host);
 
-    vscode.window.registerTreeDataProvider('extension.vsKubernetesTestExplorer', treeProvider);
-    vscode.commands.registerCommand('extension.vsKubernetesRefreshTestExplorer', () => treeProvider.refresh());
+    vscode.window.registerTreeDataProvider('extension.vsHydrateExplorer', treeProvider);
+    vscode.commands.registerCommand('extension.vsHydrateRefreshExplorer', () => treeProvider.refresh());
+    // vscode.commands.registerCommand('extension.vsHydrateSelectCluster', selectCluster);
 }
 
 // this method is called when your extension is deactivated
