@@ -24,13 +24,19 @@ In this example, I've added a new view (a view is one of the icons on the sideba
 
 I've added a view represented by an icon of some cherries.
 
-## Currently exploring: Populating a view with data from a TreeDataProvider
+## Populating a view with data from a TreeDataProvider
 I'm currently working on populating the view container mentioned in the previous section. Using the Kubernetes VS Code extension (https://github.com/Azure/vscode-kubernetes-tools) as a guide, I'm exploring how to display the user's Kubernetes clusters in the view container.
 ### Update: Tuesday 7/2/19
 Was able to get the new view to display the user's Kubernetes clusters. Bug: when switching to the Kubernetes extension view then switching back to the new view, the clusters are no longer displayed. (Might have to do with the fact that I based my code off of the Kubernetes extension code, so that overlap may be causing some problems?)
 
 ### Update: Wednesday 7/3/19
 Disabling the Kubernetes extension fixes the problem described above. The two seem to interact with each other somehow; when both are enabled, duplicate "refresh" icons appear in each view. However, this does not occur when the Kubernetes extension is disabled. Currently exploring why that is.
+
+### Update: Friday 7/5/19
+I fixed the problem listed above. I was using the same name for my new view ID as that of the Kubernetes VS Code extension. Once I changed the ID I was using, everything worked fine. Based on this, I'm assuming that the extension view ID has to be unique (though I'm not sure how one would check this across ALL other VS Code extensions available - perhaps this is only an issue in the extension development host that VS Code has for testing?).
+
+## Calling a Python script from Typescript
+Currently working on finding the best way for calling a Python script from Typescript to enable the extension to run Hydrate when prompted by a user. I've also been brainstorming design ideas and what the flow of the extension should be for users.
 
 # Resources
 Resources I read through and referenced.
